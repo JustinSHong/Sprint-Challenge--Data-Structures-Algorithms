@@ -1,6 +1,21 @@
 const heapsort = (arr) => {
-  /* Your code here */
-  
+  console.log("arr: ", arr);
+  console.log("arr length: ", arr.length);
+  const result = new Array();
+  let heap = new Heap();
+  arr.forEach(val => {
+    return heap.insert(val);
+  });
+
+  while (heap.getSize() > 0) {
+    // let deleted = heap.delete();
+    // console.log("deleted: ", deleted);
+    result.push(heap.delete());
+  }
+  // console.log("storage: ", heap.storage);
+  console.log("result: ", result);
+  console.log("result len: ", result.length);
+  return result;
 };
 
 
