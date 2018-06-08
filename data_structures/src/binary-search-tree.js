@@ -28,7 +28,26 @@ class BinarySearchTree {
   }
   // level order traversal - start at node and explore neighboring nodes at the same level
   breadthFirstForEach(cb) {
-    
+    const result = new Array();
+    const q = new Array();
+    if (this != null) {
+      q.push(this); // add root to the result array
+      // console.log("q: ", q);
+      while (q.length > 0) {
+        let node = q.shift();
+        // console.log("node: ", node);
+        cb(node.value); // push first node in q to result in level order
+        if (node.left != null) {
+          q.push(node.left);
+        } 
+        if (node.right != null) {
+          q.push(node.right);
+        }
+      };
+      return result;
+    } else {
+      return null; // tree is empty
+    }
 
   }
 
