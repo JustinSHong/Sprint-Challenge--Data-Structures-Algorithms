@@ -15,7 +15,7 @@ const heapsort = (arr) => {
   // console.log("storage: ", heap.storage);
   console.log("result: ", result);
   console.log("result len: ", result.length);
-  return result;
+  return result.reverse();
 };
 
 
